@@ -1,3 +1,10 @@
+// Poll SCM setiap 2 menit
+properties([
+    pipelineTriggers([
+        pollSCM('H/2 * * * *')
+    ])
+])
+
 node {
     stage('Checkout') {
         checkout scm
